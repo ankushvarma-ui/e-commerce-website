@@ -13,7 +13,7 @@ const UserOrder = () => {
       {isLoading ? (
         <Loader />
       ) : error ? (
-        <Message variant="danger">{error?.data?.error || error.error}</Message>
+        <Message variant="danger">{error?.data?.error || error?.error || 'An error occurred'}</Message>
       ) : (
         <table className="w-full">
           <thead>
