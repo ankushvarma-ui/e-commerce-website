@@ -165,10 +165,10 @@ const Shop = () => {
           <div className="p-3">
             <h2 className="h4 text-center mb-2">{products?.length} Products</h2>
             <div className="flex flex-wrap">
-              {products.length === 0 ? (
+              {(!products || products.length === 0) ? (
                 <Loader />
               ) : (
-                products?.map((p) => (
+              {(products || []).map((p) => (
                   <div className="p-3" key={p._id}>
                     <ProductCard p={p} />
                   </div>
